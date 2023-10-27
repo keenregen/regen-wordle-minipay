@@ -1,0 +1,7 @@
+.navButton {
+  a {
+    &::after {
+      display: none !important;
+    }
+  }
+}

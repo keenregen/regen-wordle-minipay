@@ -1,0 +1,45 @@
+.main_container {
+  width: 100%;
+  padding: 2em 0;
+  .header {
+    position: relative;
+    max-width: 500px;
+    width: 95%;
+    margin: auto;
+    background-color: rgba(11, 11, 11, 0.922);
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 0px white;
+    .button_container {
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      button {
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        margin: 0px;
+        padding: 0px;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0px 1px 10px 0px white;
+        font-weight: bolder;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          filter: brightness(1.3);
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+    .button_container1 {
+      left: 15px;
+    }
+    .button_container2 {
+      right: 15px;
+    }
+    h1{
+      font-size: 1.2em;
+    }
+  }
+}
+

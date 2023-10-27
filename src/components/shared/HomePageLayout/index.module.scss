@@ -1,0 +1,22 @@
+.main_container {
+  width: 100%;
+  color: white;
+  padding: 10vh 5vw;
+  display: flex;
+  @media (min-width: 768px) {
+    min-height: calc(100vh - 72px);
+  }
+  .wrapper {
+    flex: 1;
+    height: 100%;
+    max-width: 1400px;
+    margin: auto;
+  }
+}
+.light {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark {
+  background-color: rgba(0, 0, 0, 0.2);
+}

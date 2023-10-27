@@ -1,0 +1,64 @@
+.main_container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  .wrapper {
+    max-width: 1200px;
+    padding: 3em 1em;
+    width: 100%;
+    margin: auto;
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2em;
+
+    .game_card_container {
+      margin: 1em;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        .image_container {
+          filter: brightness(1.1);
+          transition: all 0.3s ease-in-out;
+          img {
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 0px 15px 1px crimson, 0px 0px 20px 6px orange;
+          }
+        }
+        .text_container {
+          h2 {
+            text-shadow: 0px 0px 10px red;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+      .image_container {
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        max-width: 400px;
+        min-width: 300px;
+        aspect-ratio: 1;
+        width: 100%;
+        aspect-ratio: 1;
+        img {
+          box-shadow: 0px 0px 10px 1px crimson, 0px 0px 25px 6px orange;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      .text_container {
+        color: white;
+        padding: 2em 0;
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        h2 {
+          text-shadow: none;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}

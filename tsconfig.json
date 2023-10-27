@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@store/*": ["./store/*"],
+      "@slices/*": ["./slices/*"],
+      "@src/*": [
+        "./src/*"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "functions/words.js",
+    "functions/users.jx",
+    ".next/types/**/*.ts"
+, "src/pages/api/RegenConcept/RegenConceptApiCalls.js"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
