@@ -190,7 +190,7 @@ export default function Navigation() {
               </Nav>
               <div className="flex flex-col justify-center items-center">
                 {isConnected && (
-                  <div className="h5 text-center">
+                  <div className="font-size:10px text-center">
                     Your address: {userAddress}
                   </div>
                 )}
