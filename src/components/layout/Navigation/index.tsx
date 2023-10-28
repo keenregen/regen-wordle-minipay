@@ -20,6 +20,7 @@ import { BsQuestionCircleFill } from "react-icons/bs";
 import GameStaticticsModal from "@src/components/games/modals/GameStaticticsModal";
 import GameSettingsModal from "@src/components/games/modals/GameSettingsModal";
 import GameInformationModal from "@src/components/games/modals/GameInformationModal";
+import { useAccount } from "wagmi";
 
 export default function Navigation() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,6 +30,9 @@ export default function Navigation() {
   const [selectedAddress, setSelectedAddress] = useState(null);
   const dispatch = useDispatch<AppDispatch>();
   const router = useRouter();
+
+  const [userAddress, setUserAddress] = useState("");
+  const { address, isConnected } = useAccount();
 
   const handleClose = () => setMenuOpen(false);
 
@@ -47,6 +51,12 @@ export default function Navigation() {
       connect();
     }
   }, []);
+
+  useEffect(() => {
+    if (isConnected && address) {
+      setUserAddress(address);
+    }
+  }, [address, isConnected]);
 
   /*   async function connectUser() {
     if ((window as any).ethereum) {
@@ -178,6 +188,13 @@ export default function Navigation() {
                   );
                 })}
               </Nav>
+              <div className="flex flex-col justify-center items-center">
+                {isConnected && (
+                  <div className="h2 text-center">
+                    Your address: {userAddress}
+                  </div>
+                )}
+              </div>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>
