@@ -190,8 +190,8 @@ export default function Navigation() {
               </Nav>
               <div className="flex flex-col justify-center items-center">
                 {isConnected && (
-                  <div className="font-size:10px text-center">
-                    Your address: {userAddress}
+                  <div className="text-center font-size:10px font-weight: bold">
+                    Connected Address: {userAddress.substring(0,7)}...{userAddress.substring(userAddress.length-5,userAddress.length)}
                   </div>
                 )}
               </div>
