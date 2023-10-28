@@ -123,8 +123,8 @@ export default function Navigation() {
           <Navbar.Brand href="/">
             <Image
               src="/RegenWordle4.png"
-              width={180}
-              height={40}
+              width={135}
+              height={30}
               alt="logo"
               style={{ backgroundColor: "transparent" }}
             ></Image>
