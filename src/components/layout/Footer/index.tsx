@@ -6,7 +6,7 @@ function Footer() {
     >
       <p className="m-0 py-3 text-white flex text-center">
         {/* &copy; {new Date().getFullYear()} RegenWise */} For questions,
-        comments and bug reporting: keenregen@gmail.com{' '}
+        comments and bugs: keenregen@gmail.com{' '}
       </p>
     </footer>
   );

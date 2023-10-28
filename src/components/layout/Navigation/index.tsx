@@ -1,5 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useConnect } from "wagmi";
+import { InjectedConnector } from "@wagmi/core/connectors";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar, Container, Nav, Button, Offcanvas } from "react-bootstrap";
@@ -33,7 +36,19 @@ export default function Navigation() {
     setMenuOpen(!menuOpen);
   };
 
-  async function connectUser() {
+  const [hideConnectBtn, setHideConnectBtn] = useState(false);
+  const { connect } = useConnect({
+    connector: new InjectedConnector(),
+  });
+
+  useEffect(() => {
+    if ((window as any).ethereum && (window as any).ethereum.isMiniPay) {
+      setHideConnectBtn(true);
+      connect();
+    }
+  }, []);
+
+  /*   async function connectUser() {
     if ((window as any).ethereum) {
       await (window as any).ethereum.request({ method: "eth_requestAccounts" });
     } else {
@@ -58,9 +73,9 @@ export default function Navigation() {
         }
       }
     }
-  }, []);
+  }, []); */
 
-  //When the connection situation changes, run this
+  /*   //When the connection situation changes, run this
   if (typeof window !== "undefined") {
     if (typeof (window as any).ethereum !== "undefined") {
       (window as any).ethereum.on("accountsChanged", () => {
@@ -71,7 +86,7 @@ export default function Navigation() {
         }
       });
     }
-  }
+  } */
 
   const handleInfoModalOpen = () => {
     setShowInformationModal(true);
@@ -162,28 +177,6 @@ export default function Navigation() {
                     </Link>
                   );
                 })}
-                {selectedAddress ? (
-                  <></>
-                ) : (
-                  // <Button
-                  //   variant="success"
-                  //   className="ml-2 w-full md:w-auto mt-[30px] md:mt-[0px]"
-                  //   onClick={() => {
-                  //     handleClose();
-                  //     return router.push('/dashboard');
-                  //   }}
-                  // >
-                  //   <span className="font-extrabold">Dashboard</span>
-                  // </Button>
-                  <></>
-                  // <Button
-                  //   variant="primary"
-                  //   className="ml-2 w-full md:w-auto mt-[30px] md:mt-[0px]"
-                  //   onClick={() => connectUser()}
-                  // >
-                  //   <span className="font-extrabold">Connect Wallet</span>
-                  // </Button>
-                )}
               </Nav>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
