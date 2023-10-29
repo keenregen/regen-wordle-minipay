@@ -45,7 +45,7 @@ export default function App({
         <WagmiConfig config={wagmiConfig}>
         <RainbowKitProvider chains={chains} appInfo={appInfo} coolMode={true}>
         <Provider store={store}>
-          <Layout footer={true}>{page}</Layout>
+          <Layout footer={false}>{page}</Layout>
         </Provider>
         </RainbowKitProvider>
         </WagmiConfig>
