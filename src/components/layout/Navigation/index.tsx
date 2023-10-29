@@ -122,9 +122,9 @@ export default function Navigation() {
         <Container fluid className="flex">
           <Navbar.Brand href="/">
             <Image
-              src="/RegenWordle4.png"
-              width={135}
-              height={30}
+              src="/3j.png"
+              width={40}
+              height={40}
               alt="logo"
               style={{ backgroundColor: "transparent" }}
             ></Image>
@@ -164,8 +164,8 @@ export default function Navigation() {
               <Offcanvas.Title id={`offcanvasNavbarLabel-expand`}>
                 <Navbar.Brand href="/">
                   <Image
-                    src="/RegenWordle4.png"
-                    width={150}
+                    src="/3j.png"
+                    width={40}
                     height={40}
                     alt="logo"
                   ></Image>
